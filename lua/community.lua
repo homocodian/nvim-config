@@ -11,5 +11,6 @@ return {
   { import = "astrocommunity.utility.hover-nvim" },
   { import = "astrocommunity.scrolling.mini-animate" },
   { import = "astrocommunity.recipes.vscode-icons" },
+  { import = "astrocommunity.color.transparent-nvim" },
   -- import/override with your plugins folder
 }
