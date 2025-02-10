@@ -12,5 +12,7 @@ return {
   { import = "astrocommunity.scrolling.mini-animate" },
   { import = "astrocommunity.recipes.vscode-icons" },
   { import = "astrocommunity.color.transparent-nvim" },
+  { import = "astrocommunity.colorscheme.nightfox-nvim" },
+  { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
   -- import/override with your plugins folder
 }
