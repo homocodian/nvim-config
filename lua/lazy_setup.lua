@@ -13,6 +13,40 @@ require("lazy").setup({
   },
   { import = "community" },
   { import = "plugins" },
+
+  {
+    "andrewferrier/debugprint.nvim",
+    dependencies = {
+      "echasnovski/mini.nvim", -- Needed for :ToggleCommentDebugPrints(NeoVim 0.9 only)
+      -- and line highlighting (optional)
+    },
+    lazy = false, -- Required to make line highlighting work before debugprint is first used
+    version = "*", -- Remove if you DON'T want to use the stable version
+    opts = {
+      keymaps = {
+        normal = {
+          plain_below = "g?p",
+          plain_above = "g?P",
+          variable_below = "g?v",
+          variable_above = "g?V",
+          variable_below_alwaysprompt = nil,
+          variable_above_alwaysprompt = nil,
+          textobj_below = "g?o",
+          textobj_above = "g?O",
+          toggle_comment_debug_prints = nil,
+          delete_debug_prints = nil,
+        },
+        visual = {
+          variable_below = "g?v",
+          variable_above = "g?V",
+        },
+      },
+      commands = {
+        toggle_comment_debug_prints = "ToggleCommentDebugPrints",
+        delete_debug_prints = "DeleteDebugPrints",
+      },
+    },
+  },
 } --[[@as LazySpec]], {
   -- Configure any other `lazy.nvim` configuration options here
   install = { colorscheme = { "astrotheme", "habamax" } },
