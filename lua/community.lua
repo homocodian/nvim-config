@@ -14,5 +14,6 @@ return {
   { import = "astrocommunity.color.transparent-nvim" },
   { import = "astrocommunity.colorscheme.nightfox-nvim" },
   { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
+  { import = "astrocommunity.pack.cpp" },
   -- import/override with your plugins folder
 }

@@ -31,3 +31,9 @@ vim.api.nvim_set_keymap("n", "<C-j>", ":t .<CR>", { noremap = true, silent = tru
 
 -- Map Ctrl+k to duplicate the line up
 vim.api.nvim_set_keymap("n", "<C-k>", ":t .<CR>:move -2<CR>==", { noremap = true, silent = true })
+
+-- Move current line up
+vim.api.nvim_set_keymap("n", "<A-Up>", ":m .-2<CR>", { noremap = true, silent = true })
+
+-- Move current line down
+vim.api.nvim_set_keymap("n", "<A-Down>", ":m .+1<CR>", { noremap = true, silent = true })
