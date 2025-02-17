@@ -26,11 +26,11 @@ vim.opt.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
 vim.opt.shellquote = ""
 vim.opt.shellxquote = ""
 
--- Map Ctrl+j to duplicate the line down
-vim.api.nvim_set_keymap("n", "<C-j>", ":t .<CR>", { noremap = true, silent = true })
+-- Map Ctrl+d to duplicate the line down
+vim.api.nvim_set_keymap("n", "<C-d>", ":t .<CR>", { noremap = true, silent = true })
 
 -- Map Ctrl+k to duplicate the line up
-vim.api.nvim_set_keymap("n", "<C-k>", ":t .<CR>:move -2<CR>==", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<C-k>", ":t .<CR>:move -2<CR>==", { noremap = true, silent = true })
 
 -- Move current line up
 vim.api.nvim_set_keymap("n", "<A-Up>", ":m .-2<CR>", { noremap = true, silent = true })
