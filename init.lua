@@ -18,13 +18,15 @@ end
 require "lazy_setup"
 require "polish"
 
-vim.opt.shell = vim.fn.executable "pwsh" and "pwsh" or "powershell"
-vim.opt.shellcmdflag =
-  "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
-vim.opt.shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait"
-vim.opt.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
-vim.opt.shellquote = ""
-vim.opt.shellxquote = ""
+if vim.fn.has "win32" == 1 or vim.fn.has "win64" then
+  vim.opt.shell = vim.fn.executable "pwsh" and "pwsh" or "powershell"
+  vim.opt.shellcmdflag =
+    "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
+  vim.opt.shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait"
+  vim.opt.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
+  vim.opt.shellquote = ""
+  vim.opt.shellxquote = ""
+end
 
 -- Map Ctrl+d to duplicate the line down
 vim.api.nvim_set_keymap("n", "<C-d>", ":t .<CR>", { noremap = true, silent = true })
