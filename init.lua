@@ -18,7 +18,7 @@ end
 require "lazy_setup"
 require "polish"
 
-if vim.fn.has "win32" == 1 or vim.fn.has "win64" then
+if vim.fn.has "win32" == 1 or vim.fn.has "win64" == 1 then
   vim.opt.shell = vim.fn.executable "pwsh" and "pwsh" or "powershell"
   vim.opt.shellcmdflag =
     "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
