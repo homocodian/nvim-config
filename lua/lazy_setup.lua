@@ -13,7 +13,6 @@ require("lazy").setup({
   },
   { import = "community" },
   { import = "plugins" },
-
   {
     "andrewferrier/debugprint.nvim",
     dependencies = {
